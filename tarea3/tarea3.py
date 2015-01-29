@@ -20,8 +20,10 @@ def marzullo(sourcestable):
             beststart = sortedtable[i][0]
             bestend = sortedtable[i+1][0]
     occupies = 0
-    for source in sourcetable:
-        if source[0] > bestsart or source[1] < 
+    for source in sourcestable:
+        if source[0] > beststart or source[1]:
+            pass
+        pass
     
 def tuplesort(tuples):
     return sorted(tuples, key = getKey)
