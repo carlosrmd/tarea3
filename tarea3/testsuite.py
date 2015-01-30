@@ -9,7 +9,7 @@ class TestSuite(unittest.TestCase):
 		reservations.append([8,10])
 		self.assertEqual(True, marzullo(reservations, 10, 12))
 			
-	def test_ParkingTotallyFull
+	def test_ParkingTotallyFull(self):
 		reservations = []
 		for i in range(10):
 			reservations.append([6,18])
