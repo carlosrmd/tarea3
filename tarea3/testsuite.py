@@ -27,3 +27,21 @@ class TestSuite(unittest.TestCase):
 		for i in range(9):
 			reservations.append([10,12])
 		self.assertEqual(True, marzullo(reservations, 10, 12))
+
+	def test_OnlyParkingLotAvailableAllDay(self):
+		reservations = []
+		for i in range(10):
+			reservations.append([6,10])
+			reservations.append([12,18])
+		for i in range(9):
+			reservations.append([10,12])
+		self.assertEqual(True, marzullo(reservations, 10, 12))
+
+	def test_ReservingAllDayEmptyParking(self):
+		reservations = []
+		self.assertEqual(True, marzullo(reservations, 6, 18))
+
+	def test_ReservingAllDayNotEmptyParking(self):
+		reservations = []
+		reservations.append([6,7])
+		self.assertEqual(False, marzullo(reservations, 6, 18))
