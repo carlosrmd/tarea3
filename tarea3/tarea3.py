@@ -25,8 +25,11 @@ def marzullo(sourcestable, intervbegin, intervend):
                 bestend = sortedtable[i+1][0]
     
     bestinterval = [beststart, bestend, best]
-    
-    return bestinterval
+    print("Best interval is [" + str(bestinterval[0]) + "," + str(bestinterval[1]) + "] and the number of reservations is: " + str(bestinterval[2]))
+    if bestinterval[2] > 9:
+        return False
+    elif bestinterval[2] <= 9:
+        return True
     
     
 def tuplesort(tuples):
@@ -42,10 +45,8 @@ if __name__ == '__main__':
     reservations.append([8, 9])
     reservations.append([8, 12])
     reservations.append([10, 12])
-    bestinterval = marzullo(reservations, 9, 10)
-    print("Best interval is [" + str(bestinterval[0]) + "," + str(bestinterval[1]) + "] and the number of reservations is: " + str(bestinterval[2]))
-    if bestinterval[2] > 9:
-    	print("Sorry. There's no parking lot available at this hour.")
-    elif bestinterval[2] <= 9:
+    if marzullo(reservations, 9, 10):
     	print("Thank you. Your reservation has been processed successfully.")
+    else:
+        print("Sorry. There's no parking lot available at this hour.")
     
